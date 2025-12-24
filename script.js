@@ -37,7 +37,7 @@ const projects = [
     description: "Modern admin dashboard with data visualization and responsive design.",
     image: "./images/portfolio thumbnail.jpg",
     link: "https://chandru231.github.io/Portfolio/",
-    tech: ["REACT JS", "CHART.JS", "CSS"]
+    tech: ["REACT JS", "JavaScript", "CSS","HTML"]
   }
 ];
 
