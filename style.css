@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+header h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ff4444;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+header p {
+  margin-top: 12px;
+  color: #888;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+/* GRID - Two items per row */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 60px 80px;
+  max-width: 1600px;
+  margin: auto;
+}
+
+/* CARD - Horizontal layout */
+.card {
+  position: relative;
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: 
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    background 0.3s ease;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 350px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ENTRY ANIMATION */
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  background: #151515;
+}
+
+/* PROJECT NUMBER */
+.project-number {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  z-index: 10;
+}
+
+/* IMAGE CONTAINER */
+.card-image {
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.08);
+}
+
+/* CONTENT */
+.content {
+  padding: 40px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #111;
+}
+
+/* Category Tag */
+.category-tag {
+  display: inline-block;
+  background: rgba(255, 60, 60, 0.15);
+  color: #ff4444;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+
+.content h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.content p {
+  font-size: 0.95rem;
+  color: #888;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* Tech Stack */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin-bottom: 24px;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.tech-item::before {
+  content: '↳';
+  color: #444;
+}
+
+/* Live Demo Link */
+.demo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.demo-link:hover {
+  color: #00ff9d;
+}
+
+.demo-link::after {
+  content: '↗';
+  font-size: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 40px 30px;
+    gap: 40px;
+  }
+  
+  .card {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  
+  header p {
+    font-size: 1rem;
+  }
+  
+  .grid {
+    padding: 30px 20px;
+  }
+  
+  .card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  
+  .card-image {
+    height: 250px;
+  }
+  
+  .content {
+    padding: 30px 25px;
+  }
+  
+  .content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .project-number {
+    top: 15px;
+    left: 15px;
+    font-size: 1rem;
+  }
+}
